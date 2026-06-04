@@ -26,5 +26,23 @@ int main(){
 
     std::cout<< test.dump(4) << std::endl; 
 
+    json second_j;
+
+    example_courses["Math"] = 6;
+
+    second_j["id"] = "A002";
+    second_j["name"] = "Jane Doe";
+    second_j["courses"] = example_courses;
+
+    std::cout<< second_j.dump(4) << std::endl;
+
+    // Create a Student Object from JSON
+    Student b;
+
+    b = second_j;
+
+    b.printProfile();
+
+    return 0;
     
 }
