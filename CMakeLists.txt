@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Add execuatable target 
 add_executable(student_test
-    src/main.cpp
+    src/management_system.cpp
     src/student.cpp
 )
 
