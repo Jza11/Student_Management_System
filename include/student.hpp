@@ -1,8 +1,13 @@
 #ifndef student_HPP
-#define stdudent_HPP
+#define student_HPP
 
-#include <string>
 #include <map>
+#include <string>
+#include <iostream>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
+
 
 /**
     ---- Description ---- 
@@ -41,14 +46,21 @@ class Student {
 
         void set_student_id(std::string student_id);
 
+        void set_courses(std::map<std::string, float> courses);
+
         void deleteCourse(std::string course_name);
 
         void addCourse(std::string course_name, float grade);
 
-
         void printProfile() const;
         
 };
+
+// Modifications to the nlohmann JSON libraries
+void to_json(json& j, const Student& a);
+
+void from_json(const json& j, Student& a);
+
 #endif
 
 
