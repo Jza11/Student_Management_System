@@ -1,14 +1,30 @@
 #include "student.hpp"
-#include <map>
+#include <iostream>
 #include <string>
+#include <map>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json; 
 
 int main(){
-    // Create a Student object
-    Student s1 = Student("Jane Doe", "A1234");
+    Student a; 
+    a.set_Name("John Doe");
+    a.set_student_id("A0001");
 
-    // Add courses 
-    s1.addCourse("Mathematics", 95.0);
-    s1.addCourse("Physics", 88.5);
+    std::map<std::string, float> example_courses;
 
-    s1.printProfile();
+    example_courses["Modern Art"] = 10; 
+    example_courses["History"] = 7;
+    example_courses["Math"] = 8; 
+
+    a.set_courses(example_courses);
+
+    // Create a JSON object from Student object.
+    json test = a;
+
+    std::cout << "JSON object created\n";
+
+    std::cout<< test.dump(4) << std::endl; 
+
+    
 }
