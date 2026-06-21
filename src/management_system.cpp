@@ -1,7 +1,9 @@
 #include "student.hpp"
+#include "sms.hpp"
 #include <iostream>
 #include <string>
 #include <map>
+#include <vector>
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json; 
@@ -19,29 +21,27 @@ int main(){
 
     a.set_courses(example_courses);
 
-    // Create a JSON object from Student object.
-    json test = a;
+   Student b; 
+   b.set_Name("Jane Doe");
+   b.set_student_id("A0002");
 
-    std::cout << "JSON object created\n";
+   example_courses["Math"] = 7;
+   example_courses["History"] = 10;
+   example_courses["Modern Art"] = 6;
 
-    std::cout<< test.dump(4) << std::endl; 
+   b.set_courses(example_courses);
 
-    json second_j;
+   std::string example_faculty = "HumanStudies";
+   int year = 2026;
 
-    example_courses["Math"] = 6;
+   std::vector<Student> current_students;
+   current_students.push_back(a);
+   current_students.push_back(b);
 
-    second_j["id"] = "A002";
-    second_j["name"] = "Jane Doe";
-    second_j["courses"] = example_courses;
+   sms test(example_faculty, year, current_students);
 
-    std::cout<< second_j.dump(4) << std::endl;
+   test.saveStudents();
 
-    // Create a Student Object from JSON
-    Student b;
-
-    b = second_j;
-
-    b.printProfile();
 
     return 0;
     
