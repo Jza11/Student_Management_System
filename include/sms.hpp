@@ -1,6 +1,18 @@
 #ifndef sms_HPP
 #define sms_HPP
 
+/** 
+
+    Header file of the SMS class. 
+
+    ---- Author ----
+    Username: Jza11
+    Email: josemiguelcaceb@gmail.com
+
+
+*/
+
+
 #include <iostream>
 #include <string>
 #include <vector> 
@@ -43,9 +55,10 @@ class sms {
         // Custom functions of the class 
         void saveStudents();
 
+        /*
         void editStudentInfo(std::string student_name);
 
         void deleteStudent(std::string student_name);
-
-}
+        */
+};
 #endif
