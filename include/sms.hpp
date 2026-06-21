@@ -5,6 +5,9 @@
 #include <string>
 #include <vector> 
 #include "student.hpp"
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 
 class sms {
