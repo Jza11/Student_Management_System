@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(student_test
     src/management_system.cpp
     src/student.cpp
+    src/sms.cpp
 )
 
 # Include directories 
